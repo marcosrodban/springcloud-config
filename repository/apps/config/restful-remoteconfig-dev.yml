@@ -1,0 +1,23 @@
+config:
+  key: dev
+aplicacion:
+  name: miaplicacion
+  texto: hola555546465465
+  zuulconfig:
+    host: localhost
+    port: 8099
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://ESLGVH4N32.ste.dom:8761/eureka/
+    healthcheck:
+      enabled: false
+  instance:
+    preferIpAddress: true
+    initialStatus: UP
+    #leaseExpirationDurationInSeconds: 5
+    #leaseRenewalIntervalInSeconds: 5
+    #healthCheckUrlPath: /actuator/health
+    #statusPageUrlPath: /actuator/info  
