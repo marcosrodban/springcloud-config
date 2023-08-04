@@ -7,7 +7,7 @@ spring:
     config:
       server:
         native:
-          searchLocations: /repository/apps/config
+          searchLocations: repository/apps/config
 
 eureka:
   client:

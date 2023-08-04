@@ -6,4 +6,4 @@ y application.yml para la configuración del aplicativo se realizará de forma e
 spring.cloud.bootstrap.location y spring.config.location para los ficheros bootstrap.properties y application.yml respectivamente
 
 - El repositorio se carga de manera local en el sistema de archivos. Este repositorio se encuentra en el raíz del proyecto en el directorio 
-repository. Y se encuentra configurado en el fichero application.yml
+repository. Y se encuentra configurado en el fichero application.yml  

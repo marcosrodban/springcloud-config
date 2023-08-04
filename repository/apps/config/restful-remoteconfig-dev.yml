@@ -6,18 +6,36 @@ aplicacion:
   zuulconfig:
     host: localhost
     port: 8099
+  kafka:
+    topic-name: TEST
+    topic-json-name: TESTJSON
+    group-id: mygroup
+    enable-consumers: false #activa o desactiva los consumidores de topic kafka
+
+server:
+  servlet:
+    context-path: /microservicio # esto hace que el contexto el microservicio sea http://localhost:8080/microservicio/kafka/producer/9
+
 eureka:
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: true #para activar el registro en eureka -> true
+    fetchRegistry: true #para activar el registro en eureka -> true
     serviceUrl:
-      defaultZone: http://ESLGVH4N32.ste.dom:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
     healthcheck:
-      enabled: false
+      enabled: true
   instance:
     preferIpAddress: true
     initialStatus: UP
     #leaseExpirationDurationInSeconds: 5
     #leaseRenewalIntervalInSeconds: 5
-    #healthCheckUrlPath: /actuator/health
-    #statusPageUrlPath: /actuator/info  
+    healthCheckUrlPath: /actuator/health
+    statusPageUrlPath: /actuator/info  
+
+spring:
+   kafka:
+     consumer:
+        bootstrap-servers: 192.168.1.126:9092,192.168.1.126:9093,192.168.1.126:9094
+        auto-offset-reset: earliest
+     producer:
+        bootstrap-servers: 192.168.1.126:9092,192.168.1.126:9093,192.168.1.126:9094

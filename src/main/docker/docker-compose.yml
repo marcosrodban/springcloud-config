@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+ configserver:
+  image: configserver:v9
+  container_name: configserver
+  build: .
+  ports: 
+   - "9001:8899"
+  #links:
+  # - 
+  environment:
+   - variable1=valor1
+   - variable2=valor2
+#creamos un volumen de tipo host
+  volumes:
+   - /home/neo/temp/docker/var/apps/configserver/repository:/repository
+   - /home/neo/temp/docker/var/apps/configserver/conf:/conf
+
